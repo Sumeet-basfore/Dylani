@@ -3,11 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
+    "predev": "npm run build -w @dylani/design-spec",
     "dev": "concurrently -k -n server,web -c cyan,magenta \"npm run dev -w @die/server\" \"npm run dev -w @die/web\"",
-    "build": "npm run build -w @die/web && npm run build -w @die/server",
-    "test": "node --test apps/server/src/*.test.js"
+    "build": "npm run build -w @dylani/design-spec && npm run build -w @die/web && npm run build -w @die/server",
+    "typecheck": "tsc --noEmit -p apps/web/tsconfig.json && tsc --noEmit -p packages/design-spec/tsconfig.json",
+    "pretest": "npm run build -w @dylani/design-spec",
+    "test": "node --test apps/server/src/*.test.js",
+    "test:security-browser": "playwright test -c tests/browser/playwright.config.mjs"
   },
-  "devDependencies": { "concurrently": "^9.2.1" }
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "concurrently": "^9.2.1"
+  }
 }

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "saas-01-operations-dashboard",
+    "category": "saas-dashboard",
+    "title": "Operations overview",
+    "requirements": ["Summarize active work and monthly revenue", "Show recent team activity", "Provide a clear path to create a project"]
+  },
+  {
+    "id": "saas-02-support-analytics",
+    "category": "saas-dashboard",
+    "title": "Support analytics",
+    "requirements": ["Show open tickets, median response time, and satisfaction", "Highlight ticket volume over time", "Surface the queues that need attention"]
+  },
+  {
+    "id": "saas-03-subscription-health",
+    "category": "saas-dashboard",
+    "title": "Subscription health",
+    "requirements": ["Show active subscriptions, monthly recurring revenue, and churn", "Compare recent performance with the previous period", "List at-risk accounts and their next action"]
+  },
+  {
+    "id": "landing-01-finance-product",
+    "category": "landing-page",
+    "title": "Personal finance product",
+    "requirements": ["Explain a budgeting product for independent professionals", "Show three concrete product benefits", "Include a primary start-free action and a customer quote"]
+  },
+  {
+    "id": "landing-02-team-planning",
+    "category": "landing-page",
+    "title": "Team planning platform",
+    "requirements": ["Introduce a collaborative planning platform", "Show how a team plans, tracks, and reviews work", "Include pricing context and a trial action"]
+  },
+  {
+    "id": "landing-03-climate-reporting",
+    "category": "landing-page",
+    "title": "Climate reporting service",
+    "requirements": ["Explain a service that helps small businesses report emissions", "Show a simple three-step workflow", "Include a proof point and a consultation action"]
+  },
+  {
+    "id": "portfolio-01-product-designer",
+    "category": "developer-portfolio",
+    "title": "Product designer portfolio",
+    "requirements": ["Introduce a senior product designer and their focus areas", "Feature two selected case studies", "Include a concise biography and contact action"]
+  },
+  {
+    "id": "portfolio-02-frontend-engineer",
+    "category": "developer-portfolio",
+    "title": "Frontend engineer portfolio",
+    "requirements": ["Introduce a frontend engineer focused on accessible web apps", "Feature three projects with technologies and outcomes", "Show experience highlights and a contact action"]
+  },
+  {
+    "id": "commerce-01-home-goods",
+    "category": "e-commerce",
+    "title": "Home goods storefront",
+    "requirements": ["Feature a seasonal home goods collection", "Show four products with prices and availability", "Provide category navigation and a shopping action"]
+  },
+  {
+    "id": "commerce-02-outdoor-gear",
+    "category": "e-commerce",
+    "title": "Outdoor gear storefront",
+    "requirements": ["Feature lightweight hiking essentials", "Show four products with concise use details and prices", "Surface shipping information, product categories, and a shopping action"]
+  }
+]

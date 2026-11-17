@@ -1,0 +1,26 @@
+/* Generated content stays scoped to preview surfaces; shell tokens style only its chrome. */
+.source-only { max-width: 560px; margin: auto; padding: 32px; text-align: center; }
+.source-only h2 { margin: 0 0 11px; font-size: 20px; font-weight: 600; }
+.source-only p { margin: 0 0 22px; color: var(--text-secondary); font-size: 13px; line-height: 1.7; }
+.source-browser { min-width: 0; display: flex; flex: 1; flex-direction: column; gap: 10px; }
+.source-browser label { color: var(--text-primary); font-size: 12px; font-weight: 600; }
+.source-browser select { max-width: 100%; padding: 10px; border: 1px solid var(--surface-border); border-radius: var(--radius-cards); background: var(--surface-input); color: var(--text-primary); }
+.source-browser .code-view { min-height: 420px; overflow: auto; overflow-wrap: anywhere; border: 1px solid var(--surface-border); border-radius: var(--radius-cards); background: var(--surface-canvas); }
+.generation-limit { padding: 8px 10px; border-left: 2px solid var(--color-orangey); background: var(--surface-canvas); }
+.preview-area:has(.react-preview) { display: block; padding: 0; background: var(--surface-canvas); }
+.react-build-status { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--surface-border); background: var(--surface-raised); color: var(--text-secondary); font-size: 12px; }
+.build-pill { padding: 4px 9px; border: 1px solid var(--surface-border); border-radius: var(--radius-pills); color: var(--text-primary); text-transform: capitalize; }
+.build-pill.built { border-color: var(--color-light-green); color: var(--color-light-green); }
+.build-pill.failed, .build-pill.rejected { border-color: var(--color-pink); color: var(--color-pink); }
+.build-pill.unavailable, .build-pill.preview-unavailable { border-color: var(--color-orangey); color: var(--color-orangey); }
+.build-exit { color: var(--text-secondary); font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; }
+.react-preview { width: 100%; min-height: 500px; height: 100%; display: flex; flex-direction: column; }
+.untrusted-preview-label { padding: 7px 12px; border-bottom: 1px solid var(--color-orangey); background: var(--surface-raised); color: var(--color-orangey); font-size: 9px; font-weight: 600; letter-spacing: .08em; }
+.react-preview iframe { width: 100%; min-height: 520px; flex: 1; display: block; border: 0; background: var(--surface-canvas); }
+.build-error { display: flex; align-items: baseline; gap: 8px; margin: 8px 0; padding: 8px 10px; border-left: 2px solid var(--color-pink); background: var(--surface-canvas); color: var(--color-pink); text-align: left; font-size: 12px; }
+.build-error code { flex: none; color: var(--color-pink); font-size: 10px; overflow-wrap: anywhere; }
+@media (max-width: 720px) {
+  .react-preview iframe { min-height: 450px; }
+  .react-build-status { gap: 7px; }
+  .build-error { flex-wrap: wrap; overflow-wrap: anywhere; }
+}

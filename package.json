@@ -1,0 +1,13 @@
+{
+  "name": "design-intelligence-starter",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c cyan,magenta \"npm run dev -w @die/server\" \"npm run dev -w @die/web\"",
+    "build": "npm run build -w @die/web && npm run build -w @die/server",
+    "test": "node --test apps/server/src/*.test.js"
+  },
+  "devDependencies": { "concurrently": "^9.2.1" }
+}

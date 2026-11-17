@@ -17,8 +17,7 @@ An **early local-first vertical slice** of a design-system-aware prompt-to-UI pr
 ## Not implemented
 
 - Expo code generation, builds, or export
-- Visual evaluation / automated layout checks / targeted repair
-- Model-agnostic adapter tests, reproducible benchmarks, hosted authentication, desktop packaging
+- Evidence from a multi-reviewer design-quality study, automated repair, hosted authentication, desktop packaging
 - Full DTCG import (aliases, modes, nested groups, complex tokens), imported component libraries
 
 ## Requirements
@@ -73,8 +72,8 @@ See [docs/PREVIEW_SECURITY.md](docs/PREVIEW_SECURITY.md) for the sanitizer warni
 - `apps/server`: Fastify provider proxy and prompt/skill selector
 - `docs/`: roadmap
 
-Next milestone: run the Playwright security suite in CI with Chromium, Firefox, and WebKit all provisioned, then establish a human review protocol and repeatable layout/accessibility checks for benchmark runs.
+Next milestone: collect the user's review and two additional independent reviews for the existing five M1.3 pairs, retain per-prompt disagreement, and add an untouched prompt set before making broader quality claims. M1.4's same-corpus retry result is technical reliability evidence only. Run the browser security suite in CI with Chromium, Firefox, and WebKit provisioned.
 
 ## Benchmark foundation
 
-The standalone [`benchmarks`](benchmarks/README.md) package contains 10 version-controlled prompts and a fixture mode. It compares a raw DesignSpec contract prompt with Dylani's existing skills + DesignSpec prompt, then uses the same fixed React template and isolated build path for both. Fixture mode needs no gateway credentials. For live runs, inject `DYLANI_BENCHMARK_API_KEY` and `DYLANI_BENCHMARK_MODEL` through a local secret manager or shell environment; benchmark manifests and reports never store the key. Runs are written to ignored, immutable directories under `benchmarks/runs/`, with an anonymized A/B HTML report and no automatic quality score.
+The standalone [`benchmarks`](benchmarks/README.md) package contains 10 version-controlled prompts and a deterministic fixture mode. It compares a raw DesignSpec-contract prompt with Dylani's existing skills + DesignSpec prompt, then uses the same pinned model, generation settings, React template, and isolated build path for both. Live inference supports the existing FreeLLMAPI-compatible gateway and explicitly selected loopback Ollama; it allows one same-model recovery attempt for invalid JSON or DesignSpec output and never switches models. Exact serving-model identity is required for a candidate to build. Run manifests preserve each attempt with configured credentials redacted and hash prompt and pipeline sources for reproducibility. The blind review package randomizes candidate labels and left/right order, supports individual reviewer ratings and ties, and keeps ratings unassigned until a human submits them. Fixture outputs do not measure design quality; see the benchmark README for reporting and limitations.

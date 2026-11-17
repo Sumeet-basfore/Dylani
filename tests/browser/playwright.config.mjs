@@ -3,7 +3,7 @@ import {fileURLToPath} from 'node:url';
 
 export default defineConfig({
   testDir:'.',
-  testMatch:'security.spec.mjs',
+  testMatch:'**/*.spec.mjs',
   workers:1,
   retries:0,
   timeout:45_000,
